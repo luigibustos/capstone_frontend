@@ -27,6 +27,8 @@ The "Users" table would have fields for storing information about each user, suc
 The "Recipes" table would have fields for storing information about each recipe, such as a unique ID, name, ingredients, instructions, etc.
 There would be a relationship between the "Users" and "Recipes" table, with a one-to-many relationship between a user and their recipes, meaning one user can have multiple recipes, but each recipe can only belong to one user.
 
+![Screen Shot 2023-01-27 at 11 33 06 AM](https://user-images.githubusercontent.com/102126687/215181094-54ef6ac3-a604-46cb-a2a0-33065cec0899.png)
+
 ## MVP Scope
 - [ ] Recipe creation and management: Allow users to create, edit and delete their own recipes.
 - [ ] View all recipes: Logged in User can view all thier created recipes
