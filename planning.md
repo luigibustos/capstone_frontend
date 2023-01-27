@@ -10,9 +10,17 @@ Brew Time is the ultimate coffee lover's companion, revolutionizing the pour ove
 ## Wireframe
 
 ### Login
+![Screen Shot 2023-01-27 at 11 03 11 AM](https://user-images.githubusercontent.com/102126687/215174397-6e0abf8f-9004-4062-a407-25bd96bf3647.png)
+
 ### Home 
-### Create Form
+![Screen Shot 2023-01-27 at 10 57 03 AM](https://user-images.githubusercontent.com/102126687/215174492-66249bde-de70-4f00-aaa2-804116d5ab5b.png)
+
+### Create Form 
+![Screen Shot 2023-01-27 at 10 57 15 AM](https://user-images.githubusercontent.com/102126687/215174578-c1421880-e1ba-4ced-99a9-a0ea52b36e4a.png)
+
 ### Show Page
+![Screen Shot 2023-01-27 at 10 59 12 AM](https://user-images.githubusercontent.com/102126687/215174678-a3c673ff-7f55-4a07-96c6-84b51310c498.png)
+
 
 ## ERD
 The "Users" table would have fields for storing information about each user, such as a unique ID, name, email, password, etc.
