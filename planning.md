@@ -29,7 +29,11 @@ There would be a relationship between the "Users" and "Recipes" table, with a on
 
 ![Screen Shot 2023-01-27 at 11 33 06 AM](https://user-images.githubusercontent.com/102126687/215181094-54ef6ac3-a604-46cb-a2a0-33065cec0899.png)
 
-## MVP Scope
+## Project Scope
+
+https://trello.com/invite/b/Oa79AgPh/ATTIf2df7f715a9cd64606fe862cdd1dbb571342F2E6/luigi-bustos-brew-time-capstone-project
+
+### MVP Features
 - [ ] Recipe creation and management: Allow users to create, edit and delete their own recipes.
 - [ ] View all recipes: Logged in User can view all thier created recipes
 - [ ] User registration and login: Allow users to create an account and log in to the system.
