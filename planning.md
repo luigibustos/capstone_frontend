@@ -5,7 +5,7 @@ Brew Time is the ultimate coffee lover's companion, revolutionizing the pour ove
 - As a user, I want to be able to login to the app so that I can access the create recipe form and my saved recipes. 
 - Once logged in, I want to be presented with the option to either create a new recipe or view existing ones on the home page. 
 - If I choose to create a new recipe, I should be taken to a form where I can input the necessary parameters to craft my perfect pour over coffee. 
--If I choose to view recipes, I should be taken to a page where I can see all the recipes that I have created and saved, and be able to edit or delete them as needed
+- If I choose to view recipes, I should be taken to a page where I can see all the recipes that I have created and saved, and be able to edit or delete them as needed
 
 ## Wireframe
 
