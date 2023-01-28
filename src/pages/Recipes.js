@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
 
 const Recipes = () => {
@@ -63,7 +64,6 @@ const Recipes = () => {
       strenght: "Lighter",
     },
   ];
-
   return (
     <div className="min-h-screen w-screen p-14 bg-neutral-100">
       <h1 className="text-center font-Hind text-3xl sm:text-5xl my-10">
@@ -71,7 +71,11 @@ const Recipes = () => {
       </h1>
       <div className="w-full flex flex-wrap justify-center content-start gap-3 sm:gap-6">
         {recipes.map((recipe, idx) => {
-          return <RecipeCard recipe={recipe} index={idx} />;
+          return (
+            <Link key={idx} to={`/recipes/${idx}`}>
+              <RecipeCard recipe={recipe} />
+            </Link>
+          );
         })}
       </div>
     </div>

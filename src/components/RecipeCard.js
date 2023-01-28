@@ -1,9 +1,6 @@
-const RecipeCard = ({ recipe, idx }) => {
+const RecipeCard = ({ recipe }) => {
   return (
-    <div
-      key={idx}
-      className="h-80 sm:h-96 p-5 bg-green-400 aspect-square rounded-lg drop-shadow-xl"
-    >
+    <div className="h-80 sm:h-96 p-5 bg-green-400 aspect-square rounded-lg drop-shadow-xl">
       <p>{recipe.recipeName}</p>
       <p>{recipe.roast}</p>
       <p>{recipe.balance}</p>

@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
 import Recipes from "./pages/Recipes";
+import RecipeDetails from "./pages/RecipeDetails";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/recipes" element={<Recipes />} />
+        <Route path="/recipes/:id" element={<RecipeDetails />} />
       </Routes>
       <Footer />
     </div>
