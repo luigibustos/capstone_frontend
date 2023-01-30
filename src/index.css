@@ -6,5 +6,53 @@
     .sqaure {
         aspect-ratio: 1 / 1
     }
+
+    .form-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 75%;
+    }
+    .form-label {
+        display: block; 
+        color: #374151; 
+        font-size: 1.5rem;
+        line-height: 1rem; 
+        font-weight: 700; 
+        letter-spacing: 0.025em; 
+        text-transform: uppercase; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .form-field {
+        display: block; 
+        padding-bottom: 0.75rem; 
+        padding-left: 1rem;
+        padding-right: 1rem; 
+        padding-right: 2rem; 
+        background-color: #E5E7EB; 
+        color: #374151; 
+        line-height: 1.25; 
+        width: 100%; 
+        border-radius: 0.25rem; 
+        border-width: 1px; 
+        border-color: #E5E7EB; 
+        appearance: none;   
+        padding-top: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-btn {
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem; 
+        background-color: #3B82F6; 
+        color: #ffffff; 
+        font-weight: 700; 
+        border-radius: 0.25rem; 
+        border-width: 1px; 
+        border-color: #1D4ED8; 
+        padding-bottom: 0.5rem; 
+    }
 }
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&family=Hind:wght@300;400;500;600;700&family=Satisfy&display=swap');

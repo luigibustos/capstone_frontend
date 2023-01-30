@@ -1,4 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMugHot,
+  faSquarePlus,
+  faList,
+  faBook,
+} from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const activeClassName = "text-blue-700";
@@ -6,14 +13,17 @@ const NavBar = () => {
     {
       item: "Create",
       to: "/create",
+      icon: faSquarePlus,
     },
     {
       item: "Recipes",
       to: "/recipes",
+      icon: faList,
     },
     {
       item: "Resources",
       to: "/",
+      icon: faBook,
     },
   ];
 
@@ -23,9 +33,12 @@ const NavBar = () => {
         to="/"
         className="px-8 font-Satisfy text-xl sm:text-2xl font-bold"
       >
-        Brew Time
+        Brew Time{" "}
+        <span>
+          <FontAwesomeIcon icon={faMugHot} />
+        </span>
       </NavLink>
-      <ul className=" h-full px-8 font-Hind flex flex-row gap-4 sm:gap-6 items-center justify-center sm:justify-end">
+      <ul className=" h-full px-8 font-Hind flex flex-row gap-5 sm:gap-6 items-center justify-center sm:justify-end">
         {navList.map((navItem, idx) => {
           return (
             <li key={idx}>
@@ -35,7 +48,11 @@ const NavBar = () => {
                   isActive ? activeClassName : undefined
                 }
               >
-                {navItem.item}
+                <FontAwesomeIcon
+                  className="text-2xl sm:hidden"
+                  icon={navItem.icon}
+                />
+                <span className="text-xl hidden sm:block">{navItem.item}</span>
               </NavLink>
             </li>
           );
