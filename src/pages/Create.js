@@ -106,7 +106,7 @@ const Create = () => {
   };
 
   return (
-    <div className="max-h-screen w-screen pt-14 bg-neutral-100">
+    <div className="h-screen w-screen bg-neutral-100 pt-14">
       <RecipeForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}

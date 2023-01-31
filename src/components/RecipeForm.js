@@ -1,7 +1,7 @@
 const RecipeForm = ({ recipeForm, handleChange, handleSubmit }) => {
   return (
     <form
-      className="w-full py-32 sm:py-48 grid place-items-center gap-2 text-center sm:text-left"
+      className="w-full h-3/4 py-8 grid place-items-center text-center sm:text-left"
       onSubmit={handleSubmit}
     >
       <div className="form-item mt-4">
