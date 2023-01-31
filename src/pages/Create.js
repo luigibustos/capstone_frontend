@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RecipeForm from "../components/RecipeForm";
 const Create = () => {
+  const testURL = "http://127.0.0.1:8000/coffee/";
   const [recipeForm, setRecipeForm] = useState({
     recipeName: "",
     roast: "Select Roast",
@@ -17,7 +18,7 @@ const Create = () => {
       this.strength = strength;
       this.size = size;
       this.servingSize =
-        size === 225 ? "Single" : size === 450 ? "Double" : "Tetsu";
+        size === "225" ? "Single" : size === "450" ? "Double" : "Tetsu";
       this.waterTemp =
         roast === "light" ? "200" : roast === "medium" ? "190" : "180";
       this.waterAmount = size;
@@ -79,6 +80,20 @@ const Create = () => {
     }
   }
 
+  const createRecipe = async (completeRecipe) => {
+    try {
+      await fetch(testURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(completeRecipe),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChange = (e) => {
     setRecipeForm({ ...recipeForm, [e.target.name]: e.target.value });
   };
@@ -96,6 +111,7 @@ const Create = () => {
     );
     newRecipe.calcBalance().calcStrength();
     console.log(newRecipe);
+    createRecipe(newRecipe);
     setRecipeForm({
       recipeName: "",
       roast: "Select Roast",

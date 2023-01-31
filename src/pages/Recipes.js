@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import RecipeCard from "../components/RecipeCard";
 
 const Recipes = () => {
-  const testURL = "https://api.sampleapis.com/coffee/hot";
+  // const testURL = "https://api.sampleapis.com/coffee/hot";
+  const testURL = "http://127.0.0.1:8000/coffee/";
   const [recipes, setRecipes] = useState([]);
   const getRecipeData = async () => {
     try {
       const response = await fetch(testURL);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       setRecipes(data);
     } catch (error) {
       console.log(error);

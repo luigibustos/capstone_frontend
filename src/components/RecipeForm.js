@@ -58,13 +58,13 @@ const RecipeForm = ({ recipeForm, handleChange, handleSubmit }) => {
           <option disabled value="Select Serving Size">
             Select Serving Size
           </option>
-          <option value={225} id="size-0">
+          <option value="225" id="size-0">
             Single
           </option>
-          <option value={450} id="size-1">
+          <option value="450" id="size-1">
             Double
           </option>
-          <option value={300} id="size-2">
+          <option value="300" id="size-2">
             Tetsu
           </option>
         </select>
