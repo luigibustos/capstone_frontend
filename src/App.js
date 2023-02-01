@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Create from "./pages/Create";
 import Recipes from "./pages/Recipes";
 import RecipeDetails from "./pages/RecipeDetails";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/recipes/:id" element={<RecipeDetails />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>

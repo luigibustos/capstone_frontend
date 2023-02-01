@@ -1,7 +1,8 @@
 import { useState } from "react";
 import RecipeForm from "../components/RecipeForm";
 const Create = () => {
-  const testURL = "http://127.0.0.1:8000/coffee/";
+  // const testURL = "http://127.0.0.1:8000/coffee/";
+  const testURL = "http://localhost:4000/recipes";
   const [recipeForm, setRecipeForm] = useState({
     recipeName: "",
     roast: "Select Roast",
@@ -23,30 +24,22 @@ const Create = () => {
         roast === "light" ? "200" : roast === "medium" ? "190" : "180";
       this.waterAmount = size;
       this.coffeeAmount = (size * 0.0733).toFixed(1);
-      this.pours = {};
+      this.pours = [];
     }
 
     calcBalance() {
       switch (this.balance) {
         case "standard":
-          this.pours.firstPour = (this.size * 0.2).toString();
-          this.pours.secondPour = (this.size * 0.2).toString();
+          this.pours.push({ amount: (this.size * 0.2).toFixed(1) });
+          this.pours.push({ amount: (this.size * 0.2).toFixed(1) });
           break;
         case "sweeter":
-          this.pours.firstPour = (this.size * (50 / 3) * 0.01)
-            .toFixed(1)
-            .toString();
-          this.pours.secondPour = (this.size * (70 / 3) * 0.01)
-            .toFixed(1)
-            .toString();
+          this.pours.push({ amount: (this.size * (50 / 3) * 0.01).toFixed(1) });
+          this.pours.push({ amount: (this.size * (70 / 3) * 0.01).toFixed(1) });
           break;
         case "brighter":
-          this.pours.firstPour = (this.size * (70 / 3) * 0.01)
-            .toFixed(1)
-            .toString();
-          this.pours.secondPour = (this.size * (50 / 3) * 0.01)
-            .toFixed(1)
-            .toString();
+          this.pours.push({ amount: (this.size * (70 / 3) * 0.01).toFixed(1) });
+          this.pours.push({ amount: (this.size * (50 / 3) * 0.01).toFixed(1) });
           break;
         default:
           console.error(
@@ -60,16 +53,16 @@ const Create = () => {
     calcStrength() {
       switch (this.strength) {
         case "light":
-          this.pours.thirdPour = (this.size * 0.6).toString();
+          this.pours.push({ amount: (this.size * 0.6).toFixed(1) });
           break;
         case "medium":
-          this.pours.thirdPour = (this.size * 0.3).toString();
-          this.pours.fourthPour = (this.size * 0.3).toString();
+          this.pours.push({ amount: (this.size * 0.3).toFixed(1) });
+          this.pours.push({ amount: (this.size * 0.3).toFixed(1) });
           break;
         case "strong":
-          this.pours.thirdPour = (this.size * 0.2).toString();
-          this.pours.fourthPour = (this.size * 0.2).toString();
-          this.pours.fifthPour = (this.size * 0.2).toString();
+          this.pours.push({ amount: (this.size * 0.2).toFixed(1) });
+          this.pours.push({ amount: (this.size * 0.2).toFixed(1) });
+          this.pours.push({ amount: (this.size * 0.2).toFixed(1) });
           break;
         default:
           console.error(
@@ -101,7 +94,6 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const currentState = { ...recipeForm };
-    console.log("currentState", currentState);
     const newRecipe = new Recipe(
       currentState.recipeName,
       currentState.roast,
@@ -110,7 +102,7 @@ const Create = () => {
       currentState.strength
     );
     newRecipe.calcBalance().calcStrength();
-    console.log(newRecipe);
+    console.log("New Recipe: ", newRecipe);
     createRecipe(newRecipe);
     setRecipeForm({
       recipeName: "",
