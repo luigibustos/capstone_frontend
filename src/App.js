@@ -1,10 +1,12 @@
-import "./App.css";
+// HOOKS
 import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./data";
 import { useState } from "react";
+
 // COMPONENTS
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+
 // PAGES
 import Home from "./pages/Home";
 import Create from "./pages/Create";

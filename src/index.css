@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&family=Hind:wght@300;400;500;600;700&family=Satisfy&display=swap');
+
 @layer components {
     .sqaure {
         aspect-ratio: 1 / 1
@@ -56,4 +58,3 @@
         margin-top: 1rem;
     }
 }
-@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&family=Hind:wght@300;400;500;600;700&family=Satisfy&display=swap');

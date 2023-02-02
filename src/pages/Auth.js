@@ -1,3 +1,4 @@
+// HOOKS
 import { setUserToken, clearUserToken } from "../utils/authToken";
 import { useContext } from "react";
 import { UserContext } from "../data";
@@ -65,8 +66,8 @@ const Auth = (props) => {
     }
   };
 
-  console.log(localStorage);
-  console.log(localStorage.length);
+  // console.log(localStorage);
+  // console.log(localStorage.length);
   // clearUserToken();
   return (
     <section className="h-screen w-screen pt-14">
