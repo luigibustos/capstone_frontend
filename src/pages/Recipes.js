@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import RecipeCard from "../components/RecipeCard";
+import { UserContext } from "../data";
 
 const Recipes = () => {
   const testURL = "http://localhost:4000/recipes";
-
+  const { currentUser } = useContext(UserContext);
+  const currentUserID = currentUser._id;
   const [recipes, setRecipes] = useState([]);
   const getRecipeData = async () => {
     try {
       const response = await fetch(testURL);
       const data = await response.json();
-      // console.log(data);
-      setRecipes(data);
+      const userRecipes = data.filter((item) => item.owner === currentUserID);
+      setRecipes(userRecipes);
     } catch (error) {
       console.log(error);
     }

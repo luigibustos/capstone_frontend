@@ -17,6 +17,7 @@ const RecipeCard = ({ recipe }) => {
           </p>
         );
       })}
+      <p>{recipe.owner ? recipe.owner.username : null}</p>
     </div>
   );
 };

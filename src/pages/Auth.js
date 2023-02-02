@@ -66,6 +66,7 @@ const Auth = (props) => {
   };
 
   console.log(localStorage);
+  console.log(localStorage.length);
   // clearUserToken();
   return (
     <section className="h-screen w-screen pt-14">
