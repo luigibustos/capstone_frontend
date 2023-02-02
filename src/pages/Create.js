@@ -1,13 +1,15 @@
 // HOOKS
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getUserToken } from "../utils/authToken";
+import { useNavigate } from "react-router-dom";
 
 // COMPONENTS
 import RecipeForm from "../components/RecipeForm";
 
 const Create = () => {
-  const testURL = "http://localhost:4000/recipes";
   const token = getUserToken();
+  const navigate = useNavigate();
+  const testURL = "http://localhost:4000/recipes";
   const [recipeForm, setRecipeForm] = useState({
     recipeName: "",
     roast: "Select Roast",
@@ -119,6 +121,11 @@ const Create = () => {
     });
   };
 
+  useEffect(() => {
+    if (!token) {
+      navigate("/");
+    }
+  }, []);
   return (
     <div className="h-screen w-screen bg-neutral-100 pt-14">
       {token ? (

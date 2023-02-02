@@ -1,10 +1,14 @@
 // HOOKS
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
-import RecipeCard from "../components/RecipeCard";
 import { UserContext } from "../data";
+import { getUserToken } from "../utils/authToken";
+// COMPONENTS
+import RecipeCard from "../components/RecipeCard";
 
 const Recipes = () => {
+  const token = getUserToken();
+  const navigate = useNavigate();
   const testURL = "http://localhost:4000/recipes";
   const { currentUser } = useContext(UserContext);
   const currentUserID = currentUser._id;

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMugHot,
@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const activeClassName = "text-blue-700";
   const navList = [
     {
@@ -22,15 +23,20 @@ const NavBar = () => {
     },
     {
       item: "Resources",
-      to: "/",
+      to: "/home",
       icon: faBook,
     },
   ];
 
+  const handleLogout = () => {
+    window.localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <nav className="h-14 w-full fixed top-0 left-0 right-0 bg-neutral-100 drop-shadow-lg flex items-center justify-between z-10">
       <NavLink
-        to="/"
+        to="/home"
         className="px-8 font-Satisfy text-xl sm:text-2xl font-bold"
       >
         Brew Time{" "}
@@ -57,6 +63,9 @@ const NavBar = () => {
             </li>
           );
         })}
+        <button className="text-xl" onClick={handleLogout}>
+          Logout
+        </button>
       </ul>
     </nav>
   );

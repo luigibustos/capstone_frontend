@@ -31,12 +31,11 @@ function App() {
       >
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Auth />} />
           <Route path="/home" element={<Home />} />
           <Route path="/create" element={<Create />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
-          <Route path="/auth" element={<Auth />} />
         </Routes>
         <Footer />
       </UserInfo>
