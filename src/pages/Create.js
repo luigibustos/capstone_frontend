@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getUserToken } from "../utils/authToken";
 import RecipeForm from "../components/RecipeForm";
 const Create = () => {
   // const testURL = "http://127.0.0.1:8000/coffee/";
@@ -73,12 +74,14 @@ const Create = () => {
     }
   }
 
+  const token = getUserToken();
   const createRecipe = async (completeRecipe) => {
     try {
       await fetch(testURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(completeRecipe),
       });
