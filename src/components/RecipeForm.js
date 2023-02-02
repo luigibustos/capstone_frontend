@@ -13,7 +13,6 @@ const RecipeForm = ({ recipeForm, handleChange, handleSubmit }) => {
           placeholder="Recipe Name"
           type="text"
           name="recipeName"
-          access="false"
           id="recipeName"
           onChange={handleChange}
           value={recipeForm.recipeName}
