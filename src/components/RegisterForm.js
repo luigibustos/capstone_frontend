@@ -24,8 +24,7 @@ const RegisterForm = ({ signUp }) => {
 
   return (
     <div>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <label htmlFor="username" className="form-label">
           Username:
         </label>
@@ -55,7 +54,7 @@ const RegisterForm = ({ signUp }) => {
         </label>
         <input
           className="form-field"
-          type="text"
+          type="password"
           id="password"
           name="password"
           placeholder="password"

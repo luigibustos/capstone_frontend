@@ -23,16 +23,10 @@ const Home = () => {
         Experience the art of pour over coffee like never before
       </h1>
       <div className="text-2xl font-Hind font-light sm:text-5xl sm:mt-16 w-full flex justify-center gap-4 sm:gap-8">
-        <Link
-          className="text-center text-white w-32 sm:w-56  bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded-full"
-          to="/create"
-        >
+        <Link className="form-btn" to="/create">
           Create
         </Link>
-        <Link
-          className="text-center text-white w-32 sm:w-56  bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded-full"
-          to="/recipes"
-        >
+        <Link className="form-btn" to="/recipes">
           Recipes
         </Link>
       </div>

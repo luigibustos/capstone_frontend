@@ -9,15 +9,15 @@ import RecipeCard from "../components/RecipeCard";
 const Recipes = () => {
   const token = getUserToken();
   const navigate = useNavigate();
-  const testURL = "http://localhost:4000/recipes";
   const { currentUser } = useContext(UserContext);
   const currentUserID = currentUser._id;
+  const testURL = `http://localhost:4000/users/${currentUserID}`;
   const [recipes, setRecipes] = useState([]);
   const getRecipeData = async () => {
     try {
       const response = await fetch(testURL);
       const data = await response.json();
-      const userRecipes = data.filter((item) => item.owner === currentUserID);
+      const userRecipes = await data.recipes;
       setRecipes(userRecipes);
     } catch (error) {
       console.log(error);

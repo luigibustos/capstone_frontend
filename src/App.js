@@ -18,7 +18,6 @@ function App() {
   const { Provider: UserInfo } = UserContext;
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(localStorage);
   return (
     <div className="">
       <UserInfo

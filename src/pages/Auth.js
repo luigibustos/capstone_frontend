@@ -1,6 +1,6 @@
 // HOOKS
 import { setUserToken, clearUserToken } from "../utils/authToken";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "../data";
 
 // COMPONENTS
@@ -8,7 +8,10 @@ import RegisterForm from "../components/RegisterForm";
 import LoginForm from "../components/LoginFrom";
 
 const Auth = (props) => {
+  const [registered, setRegistered] = useState(true);
+
   const { setAuth, setUser } = useContext(UserContext);
+
   const testRegisterURL = "http://localhost:4000/auth/register";
   const testLoginURL = "http://localhost:4000/auth/login";
 
@@ -66,13 +69,30 @@ const Auth = (props) => {
     }
   };
 
-  // console.log(localStorage);
-  // console.log(localStorage.length);
-  // clearUserToken();
   return (
-    <section className="h-screen w-screen pt-14">
-      <RegisterForm signUp={registerUser} />
-      <LoginForm signIn={loginUser} />
+    <section className="h-screen w-screen grid place-items-center">
+      <div className="grid place-content-center">
+        {registered ? (
+          <LoginForm signIn={loginUser} />
+        ) : (
+          <RegisterForm signUp={registerUser} />
+        )}
+        <div className="mt-4">
+          <p>
+            {registered
+              ? "Don't have an account? "
+              : "Already have an account? "}
+            <span
+              className="text-blue-500 hover:text-blue-700 duration-500 cursor-pointer"
+              onClick={() => {
+                setRegistered(!registered);
+              }}
+            >
+              {registered ? "Sign Up" : "Login"}
+            </span>
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

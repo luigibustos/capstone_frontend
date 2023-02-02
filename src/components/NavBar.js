@@ -6,8 +6,10 @@ import {
   faList,
   faBook,
 } from "@fortawesome/free-solid-svg-icons";
+import { getUserToken } from "../utils/authToken";
 
 const NavBar = () => {
+  const token = getUserToken();
   const navigate = useNavigate();
   const activeClassName = "text-blue-700";
   const navList = [
@@ -33,6 +35,13 @@ const NavBar = () => {
     navigate("/");
   };
 
+  const logout = () => {
+    return (
+      <button className="text-xl" onClick={handleLogout}>
+        Logout
+      </button>
+    );
+  };
   return (
     <nav className="h-14 w-full fixed top-0 left-0 right-0 bg-neutral-100 drop-shadow-lg flex items-center justify-between z-10">
       <NavLink
@@ -45,27 +54,29 @@ const NavBar = () => {
         </span>
       </NavLink>
       <ul className=" h-full px-8 font-Hind flex flex-row gap-5 sm:gap-6 items-center justify-center sm:justify-end">
-        {navList.map((navItem, idx) => {
-          return (
-            <li key={idx}>
-              <NavLink
-                to={navItem.to}
-                className={({ isActive }) =>
-                  isActive ? activeClassName : undefined
-                }
-              >
-                <FontAwesomeIcon
-                  className="text-2xl sm:hidden"
-                  icon={navItem.icon}
-                />
-                <span className="text-xl hidden sm:block">{navItem.item}</span>
-              </NavLink>
-            </li>
-          );
-        })}
-        <button className="text-xl" onClick={handleLogout}>
-          Logout
-        </button>
+        {token
+          ? navList.map((navItem, idx) => {
+              return (
+                <li key={idx}>
+                  <NavLink
+                    to={navItem.to}
+                    className={({ isActive }) =>
+                      isActive ? activeClassName : undefined
+                    }
+                  >
+                    <FontAwesomeIcon
+                      className="text-2xl sm:hidden"
+                      icon={navItem.icon}
+                    />
+                    <span className="text-xl hidden sm:block">
+                      {navItem.item}
+                    </span>
+                  </NavLink>
+                </li>
+              );
+            })
+          : null}
+        {token ? logout() : null}
       </ul>
     </nav>
   );

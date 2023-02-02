@@ -24,9 +24,8 @@ const LoginForm = ({ signIn }) => {
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username" className="form-label">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <label htmlFor="username" className="form-label mb-2">
           Username:
         </label>
         <input
@@ -38,12 +37,13 @@ const LoginForm = ({ signIn }) => {
           value={loginForm.username}
           onChange={handleChange}
         />
-        <label htmlFor="password" className="form-label">
+
+        <label htmlFor="password" className="form-label mb-2">
           password:
         </label>
         <input
           className="form-field"
-          type="text"
+          type="password"
           id="password"
           name="password"
           placeholder="password"
