@@ -101,7 +101,9 @@ const Create = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const currentState = { ...recipeForm };
+
     const newRecipe = new Recipe(
       currentState.recipeName,
       currentState.roast,
@@ -110,8 +112,8 @@ const Create = () => {
       currentState.strength
     );
     newRecipe.calcBalance().calcStrength();
-    // console.log("New Recipe: ", newRecipe);
     createRecipe(newRecipe);
+
     setRecipeForm({
       recipeName: "",
       roast: "Select Roast",
@@ -119,6 +121,9 @@ const Create = () => {
       balance: "Select Balance",
       strength: "Select Strength",
     });
+    setTimeout(() => {
+      navigate("/recipes");
+    }, 1000);
   };
 
   return (

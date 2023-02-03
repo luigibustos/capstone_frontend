@@ -7,7 +7,7 @@ import { UserContext } from "../data";
 import RegisterForm from "../components/RegisterForm";
 import LoginForm from "../components/LoginFrom";
 
-const Auth = (props) => {
+const Auth = () => {
   const [registered, setRegistered] = useState(true);
 
   const { setAuth, setUser } = useContext(UserContext);
@@ -27,10 +27,11 @@ const Auth = (props) => {
 
       const newUser = await fetch(testRegisterURL, configs);
       const parsedUser = await newUser.json();
-      console.log("Parsed User", parsedUser);
+
       setUserToken(parsedUser.token);
       setUser(parsedUser.user);
       setAuth(parsedUser.isLoggedIn);
+
       return parsedUser;
     } catch (error) {
       console.log(error);
@@ -51,17 +52,12 @@ const Auth = (props) => {
 
       const loggedUser = await fetch(testLoginURL, configs);
       const currentUser = await loggedUser.json();
-      // if (currentUser.token) {
-      console.log("Current User Token", typeof currentUser.token);
-      // localStorage.setItem("token", currentUser.token);
+
       setUserToken(currentUser.token);
       setUser(currentUser.user);
       setAuth(currentUser.isLoggedIn);
+
       return currentUser;
-      // }
-      // else {
-      //   throw `Server Error: ${currentUser.statusText}`;
-      // }
     } catch (error) {
       console.log(error);
       clearUserToken();
