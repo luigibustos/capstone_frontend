@@ -9,7 +9,7 @@ import RecipeForm from "../components/RecipeForm";
 const Create = () => {
   const token = getUserToken();
   const navigate = useNavigate();
-  const testURL = "http://localhost:4000/recipes";
+  const URL = "https://capstone-project-backend.herokuapp.com/recipes";
   const [recipeForm, setRecipeForm] = useState({
     recipeName: "",
     roast: "Select Roast",
@@ -82,7 +82,7 @@ const Create = () => {
 
   const createRecipe = async (completeRecipe) => {
     try {
-      await fetch(testURL, {
+      await fetch(URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

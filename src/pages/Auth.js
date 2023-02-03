@@ -12,8 +12,10 @@ const Auth = () => {
 
   const { setAuth, setUser } = useContext(UserContext);
 
-  const testRegisterURL = "http://localhost:4000/auth/register";
-  const testLoginURL = "http://localhost:4000/auth/login";
+  const registerURL =
+    "https://capstone-project-backend.herokuapp.com/auth/register";
+
+  const loginURL = "https://capstone-project-backend.herokuapp.com/auth/login";
 
   const registerUser = async (data) => {
     try {
@@ -25,7 +27,7 @@ const Auth = () => {
         },
       };
 
-      const newUser = await fetch(testRegisterURL, configs);
+      const newUser = await fetch(registerURL, configs);
       const parsedUser = await newUser.json();
 
       setUserToken(parsedUser.token);
@@ -50,7 +52,7 @@ const Auth = () => {
         },
       };
 
-      const loggedUser = await fetch(testLoginURL, configs);
+      const loggedUser = await fetch(loginURL, configs);
       const currentUser = await loggedUser.json();
 
       setUserToken(currentUser.token);

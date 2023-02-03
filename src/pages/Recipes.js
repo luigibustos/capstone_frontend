@@ -9,14 +9,15 @@ import RecipeCard from "../components/RecipeCard";
 const Recipes = () => {
   const { currentUser } = useContext(UserContext);
   const currentUserID = currentUser._id;
-  const testURL = `http://localhost:4000/users/${currentUserID}`;
+  const URL = `https://capstone-project-backend.herokuapp.com/users/${currentUserID}`;
   const [recipes, setRecipes] = useState([]);
   const getRecipeData = async () => {
     try {
-      const response = await fetch(testURL);
+      const response = await fetch(URL);
       const data = await response.json();
       const userRecipes = await data.recipes;
       setRecipes(userRecipes);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

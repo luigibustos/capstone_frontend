@@ -8,13 +8,13 @@ const RecipeDetails = () => {
   const { id } = useParams();
   const token = getUserToken();
   const navigate = useNavigate();
-  const testURL = `http://localhost:4000/recipes/${id}`;
+  const URL = `https://capstone-project-backend.herokuapp.com/recipes/${id}`;
   const [recipeDetails, setRecipeDetails] = useState([]);
   const [selectedIndexes, setSelectedIndexes] = useState([]);
 
   const getRecipeDetailsData = async () => {
     try {
-      const response = await fetch(testURL);
+      const response = await fetch(URL);
       const data = await response.json();
       setRecipeDetails(data);
     } catch (error) {
@@ -24,7 +24,7 @@ const RecipeDetails = () => {
 
   const updateRecipe = async () => {
     try {
-      const response = await fetch(testURL, {
+      const response = await fetch(URL, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const RecipeDetails = () => {
 
   const deleteRecipe = async () => {
     try {
-      const response = await fetch(testURL, {
+      const response = await fetch(URL, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
