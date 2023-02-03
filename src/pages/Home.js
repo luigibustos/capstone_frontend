@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div
       className="
-      min-h-screen w-screen bg-neutral-100
+      h-full py-60 sm:h-screen w-screen bg-neutral-100
       flex flex-col items-center justify-center
       "
     >
