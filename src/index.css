@@ -28,7 +28,16 @@
     }
 
     .form-field {
-        display: block; 
+        background-color: #eee;
+        border: none;
+        padding: 1rem;
+        font-size: 1rem;
+        /* width: 13em; */
+        border-radius: 1rem;
+        color: darkgray;
+        box-shadow: 0 0.4rem #dfd9d9;
+        cursor: pointer;
+        /* display: block; 
         padding-bottom: 0.75rem; 
         padding-left: 1rem;
         padding-right: 1rem; 
@@ -41,7 +50,7 @@
         border-width: 1px; 
         border-color: #E5E7EB; 
         appearance: none;   
-        padding-top: 0.75rem;
+        padding-top: 0.75rem; */
     }
 
     .form-btn {
@@ -56,5 +65,22 @@
         border-color: #1D4ED8; 
         padding-bottom: 0.5rem; 
         margin-top: 1rem;
+    }
+
+    .recipe-card{
+        border-radius: 20px;
+        background: #F5F5F5;
+        box-shadow:  10px 10px 20px #d0d0d0,
+             -10px -10px 20px #ffffff;
+    }
+
+    .convex {
+        border-radius: 50%;
+        background: $bg;
+        box-shadow:
+          -10px -10px 30px #fff,
+          10px 10px 30px #aeaec040,
+          inset -10px -10px 10px #aeaec025,
+          inset 10px 10px 10px #fff;
     }
 }

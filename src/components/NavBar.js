@@ -5,6 +5,7 @@ import {
   faSquarePlus,
   faList,
   faBook,
+  faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { getUserToken } from "../utils/authToken";
 
@@ -38,7 +39,11 @@ const NavBar = () => {
   const logout = () => {
     return (
       <button className="text-xl" onClick={handleLogout}>
-        Logout
+        <FontAwesomeIcon
+          className="text-xl sm:hidden"
+          icon={faRightFromBracket}
+        />
+        <span className="text-xl hidden sm:block">Logout</span>
       </button>
     );
   };
@@ -65,7 +70,7 @@ const NavBar = () => {
                     }
                   >
                     <FontAwesomeIcon
-                      className="text-2xl sm:hidden"
+                      className="text-xl sm:hidden"
                       icon={navItem.icon}
                     />
                     <span className="text-xl hidden sm:block">
