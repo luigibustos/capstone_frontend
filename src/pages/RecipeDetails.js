@@ -1,10 +1,13 @@
 // HOOKS
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getUserToken } from "../utils/authToken";
 
 const RecipeDetails = () => {
   const { id } = useParams();
+  const token = getUserToken();
+  const navigate = useNavigate();
   const testURL = `http://localhost:4000/recipes/${id}`;
   const [recipeDetails, setRecipeDetails] = useState([]);
 
@@ -12,18 +15,35 @@ const RecipeDetails = () => {
     try {
       const response = await fetch(testURL);
       const data = await response.json();
-      console.log("Single Recipe", data);
+      // console.log("Single Recipe", data);
       setRecipeDetails(data);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const deleteRecipe = async () => {
+    try {
+      const response = await fetch(testURL, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const deletedRecipe = await response.json();
+      console.log(deletedRecipe);
+      navigate("/recipes");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getRecipeDetailsData();
   }, []);
 
   const loaded = () => {
-    console.log(recipeDetails.pours);
+    // console.log(recipeDetails.pours);
     return (
       <div className="min-h-screen w-full bg-neutral-50 pt-14 text-3xl px-8">
         <p>{recipeDetails.recipeName}</p>
@@ -39,7 +59,7 @@ const RecipeDetails = () => {
             recipeDetails.pours.map((pour, idx) => {
               return (
                 <p key={idx} className="h-48 aspect-square bg-green-400">
-                  {pour.amount}
+                  Pour #{idx + 1}: {pour.amount} grams of water
                 </p>
               );
             })
@@ -48,6 +68,7 @@ const RecipeDetails = () => {
           )}
         </div>
         <Link to="/recipes">Recipes Page</Link>
+        <button onClick={deleteRecipe}>Delete this Recipe</button>
       </div>
     );
   };
