@@ -33,6 +33,7 @@ const RegisterForm = ({ signUp }) => {
           type="text"
           id="username"
           name="username"
+          autoComplete="username"
           placeholder="username"
           value={registerForm.username}
           onChange={handleChange}
@@ -57,6 +58,7 @@ const RegisterForm = ({ signUp }) => {
           type="password"
           id="password"
           name="password"
+          autoComplete="current-password"
           placeholder="password"
           value={registerForm.password}
           onChange={handleChange}

@@ -1,5 +1,5 @@
 // HOOKS
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getUserToken } from "../utils/authToken";
 import { useNavigate } from "react-router-dom";
 
@@ -121,20 +121,13 @@ const Create = () => {
     });
   };
 
-  useEffect(() => {
-    if (!token) {
-      navigate("/");
-    }
-  }, []);
   return (
     <div className="h-screen w-screen bg-neutral-100 pt-14">
-      {token ? (
-        <RecipeForm
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          recipeForm={recipeForm}
-        />
-      ) : null}
+      <RecipeForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        recipeForm={recipeForm}
+      />
     </div>
   );
 };

@@ -33,6 +33,7 @@ const LoginForm = ({ signIn }) => {
           type="text"
           id="username"
           name="username"
+          autoComplete="username"
           placeholder="username"
           value={loginForm.username}
           onChange={handleChange}
@@ -46,6 +47,7 @@ const LoginForm = ({ signIn }) => {
           type="password"
           id="password"
           name="password"
+          autoComplete="current-password"
           placeholder="password"
           value={loginForm.password}
           onChange={handleChange}
