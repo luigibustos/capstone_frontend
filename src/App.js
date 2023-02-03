@@ -1,18 +1,11 @@
 // HOOKS
-import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./data";
 import { useState } from "react";
+import routes from "./utils/router";
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-
-// PAGES
-import Home from "./pages/Home";
-import Create from "./pages/Create";
-import Recipes from "./pages/Recipes";
-import RecipeDetails from "./pages/RecipeDetails";
-import Auth from "./pages/Auth";
 
 function App() {
   const { Provider: UserInfo } = UserContext;
@@ -29,13 +22,7 @@ function App() {
         }}
       >
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Auth />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/recipes/:id" element={<RecipeDetails />} />
-        </Routes>
+        {routes}
         <Footer />
       </UserInfo>
     </div>

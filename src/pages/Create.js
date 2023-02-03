@@ -110,7 +110,7 @@ const Create = () => {
       currentState.strength
     );
     newRecipe.calcBalance().calcStrength();
-    console.log("New Recipe: ", newRecipe);
+    // console.log("New Recipe: ", newRecipe);
     createRecipe(newRecipe);
     setRecipeForm({
       recipeName: "",
