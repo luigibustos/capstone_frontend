@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Brew Time ☕
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Brew Time is the ultimate coffee lover's companion, revolutionizing the pour over experience with its user-friendly interface, allowing anyone to craft the perfect cup of coffee with just a few taps. Experience the art of pour over coffee like never before with Brew Time.
 
-## Available Scripts
+## Project Desciption 🚀
+Inspired by Tetsu Kasuya's world-winning "4:6 Method", [Brew Time](https://main--brewtime.netlify.app) brings the industry standard to the comfort of your own home.
 
-In the project directory, you can run:
+### Brew Time:
+[Brew Time](https://main--brewtime.netlify.app): https://main--brewtime.netlify.app
 
-### `npm start`
+### Tetsu Kasuya - Coffee Brewing Theory: 
+https://www.youtube.com/watch?v=wmCW8xSWGZY&t=55s
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Story
 
-### `npm test`
+- As a user, I want to be able to login to the app so that I can access the create recipe form and my saved recipes. 
+- Once logged in, I want to be presented with the option to either create a new recipe or view existing ones on the home page. 
+- If I choose to create a new recipe, I should be taken to a form where I can input the necessary parameters to craft my perfect pour over coffee. 
+- If I choose to view recipes, I should be taken to a page where I can see all the recipes that I have created and saved, and be able to edit or delete them as needed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Core Features 
 
-### `npm run build`
+✅ User Registration and Login: Secure access to the app and personalized experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Auto Generated Recipes: Get custom recipes based on your preferred roast, balance, and strength.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Recipe Library: Easily view and access all your saved recipes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ Recipe Tracker: Keep track of your brewing process with a step-by-step tracker.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used 🔧
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-## Learn More
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Features 🔭
+- [ ] Search functionality for easy recipe search
+- [ ] Customizable serving size
+- [ ] Forms for popular brewing methods (Flash Brewing, Moka Pot, Espresso)
+- [ ] Social sharing options to connect with coffee enthusiasts
+- [ ] Feedback feature for recipe comments and insights.
 
-### Code Splitting
+### Contact Me 📠
+[LinkedIn](https://www.linkedin.com/in/luigibustos/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[GitHub](https://github.com/luigibustos)
