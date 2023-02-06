@@ -1,6 +1,6 @@
 // HOOKS
 import { setUserToken, clearUserToken } from "../utils/authToken";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../data";
 
 // COMPONENTS
@@ -10,7 +10,7 @@ import LoginForm from "../components/LoginFrom";
 const Auth = () => {
   const [registered, setRegistered] = useState(true);
 
-  const { setAuth, setUser } = useContext(UserContext);
+  const { setAuth, setUser, currentUser } = useContext(UserContext);
 
   const registerURL =
     "https://capstone-project-backend.herokuapp.com/auth/register";
@@ -67,6 +67,11 @@ const Auth = () => {
     }
   };
 
+  useEffect(() => {
+    if (!currentUser) {
+      window.localStorage.clear();
+    }
+  }, []);
   return (
     <section className="h-screen w-screen grid place-items-center">
       <div className="grid place-content-center">

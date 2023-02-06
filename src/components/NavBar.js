@@ -55,7 +55,10 @@ const NavBar = () => {
       >
         Brew Time{" "}
         <span>
-          <FontAwesomeIcon icon={faMugHot} />
+          <FontAwesomeIcon
+            className="text-xl hidden sm:inline-block"
+            icon={faMugHot}
+          />
         </span>
       </NavLink>
       <ul className=" h-full px-8 font-Hind flex flex-row gap-5 sm:gap-6 items-center justify-center sm:justify-end">
