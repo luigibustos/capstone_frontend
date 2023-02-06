@@ -22,23 +22,6 @@ const RecipeDetails = () => {
     }
   };
 
-  const updateRecipe = async () => {
-    try {
-      const response = await fetch(URL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(),
-      });
-      const updatedRecipe = await response.json();
-      console.log(updatedRecipe);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const deleteRecipe = async () => {
     try {
       const response = await fetch(URL, {
