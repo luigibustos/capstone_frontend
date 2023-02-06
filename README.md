@@ -6,7 +6,8 @@ Brew Time is the ultimate coffee lover's companion, revolutionizing the pour ove
 Inspired by Tetsu Kasuya's world-winning "4:6 Method", [Brew Time](https://main--brewtime.netlify.app) brings the industry standard to the comfort of your own home.
 
 ### Brew Time:
-[Brew Time](https://main--brewtime.netlify.app): https://main--brewtime.netlify.app
+[Brew Time Website](https://main--brewtime.netlify.app)
+[Brew Time Back End](https://github.com/luigibustos/capstone_backend)
 
 ### Tetsu Kasuya - Coffee Brewing Theory: 
 https://www.youtube.com/watch?v=wmCW8xSWGZY&t=55s
